@@ -1,0 +1,577 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "personal_info": {
+        "full_name": "Nguyễn Văn A",
+        "gender": "Nam",
+        "dob": "1995-04-12",
+        "email": "nguyenvana@example.com",
+        "phone": "0905123456",
+        "address": "123 Nguyễn Trãi, Q.1, TP.HCM"
+      },
+      "employment": {
+        "position": "Trưởng nhóm kinh doanh",
+        "department": "Sales",
+        "manager_id": null,
+        "start_date": "2019-08-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 25000000
+      },
+      "access": {
+        "role": "manager",
+        "permissions": ["view_reports", "edit_employee", "approve_leave"]
+      },
+      "history": {
+        "last_promotion": "2023-03-10",
+        "previous_positions": [
+          {
+            "title": "Nhân viên kinh doanh",
+            "from": "2019-08-01",
+            "to": "2023-03-10"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "personal_info": {
+        "full_name": "Lê Thị Bích",
+        "gender": "Nữ",
+        "dob": "1998-02-25",
+        "email": "lebich@example.com",
+        "phone": "0912345678",
+        "address": "45 Lê Lợi, TP. Đà Nẵng"
+      },
+      "employment": {
+        "position": "Nhân viên hành chính",
+        "department": "HR",
+        "manager_id": 1,
+        "start_date": "2022-01-10",
+        "contract_type": "Thử việc",
+        "status": "Đang làm việc",
+        "salary": 10000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["view_own_info", "request_leave"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 3,
+      "personal_info": {
+        "full_name": "Phạm Quốc Cường",
+        "gender": "Nam",
+        "dob": "1993-06-18",
+        "email": "cuongpham@example.com",
+        "phone": "0905456789",
+        "address": "12 Nguyễn Văn Linh, Q.7, TP.HCM"
+      },
+      "employment": {
+        "position": "Kỹ sư phần mềm",
+        "department": "IT",
+        "manager_id": 8,
+        "start_date": "2020-05-20",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 23000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["commit_code", "view_tasks"]
+      },
+      "history": {
+        "last_promotion": "2022-12-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 4,
+      "personal_info": {
+        "full_name": "Trần Minh Đức",
+        "gender": "Nam",
+        "dob": "1990-11-02",
+        "email": "ductran@example.com",
+        "phone": "0908345123",
+        "address": "88 Pasteur, Q.3, TP.HCM"
+      },
+      "employment": {
+        "position": "Kế toán trưởng",
+        "department": "Finance",
+        "manager_id": null,
+        "start_date": "2017-04-10",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 28000000
+      },
+      "access": {
+        "role": "manager",
+        "permissions": ["approve_budget", "view_financial_reports"]
+      },
+      "history": {
+        "last_promotion": "2021-07-01",
+        "previous_positions": [
+          {
+            "title": "Kế toán viên",
+            "from": "2017-04-10",
+            "to": "2021-07-01"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "personal_info": {
+        "full_name": "Vũ Thị Hằng",
+        "gender": "Nữ",
+        "dob": "1999-08-20",
+        "email": "hangvu@example.com",
+        "phone": "0907788990",
+        "address": "56 Điện Biên Phủ, Hà Nội"
+      },
+      "employment": {
+        "position": "Nhân viên marketing",
+        "department": "Marketing",
+        "manager_id": 7,
+        "start_date": "2022-06-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 13000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["create_campaign", "view_analytics"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 6,
+      "personal_info": {
+        "full_name": "Đặng Thanh Tú",
+        "gender": "Nam",
+        "dob": "1988-03-12",
+        "email": "tudang@example.com",
+        "phone": "0911223344",
+        "address": "22 Phan Đình Phùng, Hà Nội"
+      },
+      "employment": {
+        "position": "Giám đốc điều hành",
+        "department": "Operations",
+        "manager_id": null,
+        "start_date": "2015-09-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 55000000
+      },
+      "access": {
+        "role": "admin",
+        "permissions": ["full_access"]
+      },
+      "history": {
+        "last_promotion": "2019-01-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 7,
+      "personal_info": {
+        "full_name": "Nguyễn Hữu Tâm",
+        "gender": "Nam",
+        "dob": "1991-10-10",
+        "email": "tamnguyen@example.com",
+        "phone": "0902233445",
+        "address": "17 Nguyễn Huệ, TP.HCM"
+      },
+      "employment": {
+        "position": "Trưởng phòng Marketing",
+        "department": "Marketing",
+        "manager_id": 6,
+        "start_date": "2018-05-10",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 27000000
+      },
+      "access": {
+        "role": "manager",
+        "permissions": ["approve_campaign", "view_team_performance"]
+      },
+      "history": {
+        "last_promotion": "2022-03-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 8,
+      "personal_info": {
+        "full_name": "Trương Văn Long",
+        "gender": "Nam",
+        "dob": "1989-12-08",
+        "email": "longtruong@example.com",
+        "phone": "0909992233",
+        "address": "14 Lý Thường Kiệt, TP.HCM"
+      },
+      "employment": {
+        "position": "Trưởng phòng IT",
+        "department": "IT",
+        "manager_id": 6,
+        "start_date": "2016-11-05",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 30000000
+      },
+      "access": {
+        "role": "manager",
+        "permissions": ["approve_tasks", "manage_infrastructure"]
+      },
+      "history": {
+        "last_promotion": "2020-09-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 9,
+      "personal_info": {
+        "full_name": "Phan Thị Linh",
+        "gender": "Nữ",
+        "dob": "1997-01-15",
+        "email": "linhphan@example.com",
+        "phone": "0903344556",
+        "address": "9 Hoàng Diệu, Hải Phòng"
+      },
+      "employment": {
+        "position": "Nhân viên nhân sự",
+        "department": "HR",
+        "manager_id": 2,
+        "start_date": "2021-09-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 12000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["view_own_info", "update_candidate"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 10,
+      "personal_info": {
+        "full_name": "Hoàng Tuấn Anh",
+        "gender": "Nam",
+        "dob": "1994-09-30",
+        "email": "tuhoang@example.com",
+        "phone": "0933445566",
+        "address": "25 Võ Văn Tần, TP.HCM"
+      },
+      "employment": {
+        "position": "Nhân viên kinh doanh",
+        "department": "Sales",
+        "manager_id": 1,
+        "start_date": "2021-04-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 16000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["view_customers", "create_order"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+
+    {
+      "id": 11,
+      "personal_info": {
+        "full_name": "Nguyễn Thu Trang",
+        "gender": "Nữ",
+        "dob": "1996-05-23",
+        "email": "trangnguyen@example.com",
+        "phone": "0977888999",
+        "address": "100 Hai Bà Trưng, Hà Nội"
+      },
+      "employment": {
+        "position": "Chuyên viên nội dung",
+        "department": "Marketing",
+        "manager_id": 7,
+        "start_date": "2023-02-10",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 14000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["create_post", "view_campaigns"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 12,
+      "personal_info": {
+        "full_name": "Đỗ Văn Hải",
+        "gender": "Nam",
+        "dob": "1992-11-07",
+        "email": "haidov@example.com",
+        "phone": "0905123765",
+        "address": "75 Nguyễn Thị Minh Khai, TP.HCM"
+      },
+      "employment": {
+        "position": "Nhân viên kỹ thuật",
+        "department": "IT",
+        "manager_id": 8,
+        "start_date": "2020-07-10",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 20000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["fix_bug", "view_logs"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 13,
+      "personal_info": {
+        "full_name": "Mai Thị Hồng",
+        "gender": "Nữ",
+        "dob": "1990-09-02",
+        "email": "hongmai@example.com",
+        "phone": "0908776543",
+        "address": "39 Nguyễn Đình Chiểu, TP.HCM"
+      },
+      "employment": {
+        "position": "Chuyên viên tuyển dụng",
+        "department": "HR",
+        "manager_id": 2,
+        "start_date": "2021-01-10",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 15000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["manage_candidates", "schedule_interview"]
+      },
+      "history": {
+        "last_promotion": "2023-06-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 14,
+      "personal_info": {
+        "full_name": "Trần Quốc Huy",
+        "gender": "Nam",
+        "dob": "1987-02-11",
+        "email": "huytran@example.com",
+        "phone": "0909234567",
+        "address": "8 Bùi Thị Xuân, TP.HCM"
+      },
+      "employment": {
+        "position": "Nhân viên tài chính",
+        "department": "Finance",
+        "manager_id": 4,
+        "start_date": "2019-03-20",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 18000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["process_payment", "view_budget"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 15,
+      "personal_info": {
+        "full_name": "Phạm Duy Khánh",
+        "gender": "Nam",
+        "dob": "1995-06-21",
+        "email": "khanhpham@example.com",
+        "phone": "0912233445",
+        "address": "22 Phan Chu Trinh, Đà Nẵng"
+      },
+      "employment": {
+        "position": "Nhân viên hỗ trợ kỹ thuật",
+        "department": "IT",
+        "manager_id": 8,
+        "start_date": "2021-12-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 17000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["handle_ticket", "update_documentation"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 16,
+      "personal_info": {
+        "full_name": "Bùi Thanh Thảo",
+        "gender": "Nữ",
+        "dob": "1998-12-10",
+        "email": "thaobui@example.com",
+        "phone": "0934335566",
+        "address": "65 Lê Duẩn, Hà Nội"
+      },
+      "employment": {
+        "position": "Nhân viên chăm sóc khách hàng",
+        "department": "Sales",
+        "manager_id": 1,
+        "start_date": "2022-11-05",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 12000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["reply_customer", "view_order"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 17,
+      "personal_info": {
+        "full_name": "Đinh Minh Tùng",
+        "gender": "Nam",
+        "dob": "1994-01-20",
+        "email": "tungdinh@example.com",
+        "phone": "0912778899",
+        "address": "11 Nguyễn Hữu Cảnh, TP.HCM"
+      },
+      "employment": {
+        "position": "Nhân viên phân tích dữ liệu",
+        "department": "Finance",
+        "manager_id": 4,
+        "start_date": "2020-06-15",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 22000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["analyze_data", "generate_report"]
+      },
+      "history": {
+        "last_promotion": "2023-01-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 18,
+      "personal_info": {
+        "full_name": "Hoàng Thị Mai",
+        "gender": "Nữ",
+        "dob": "1997-09-25",
+        "email": "maihuong@example.com",
+        "phone": "0903337788",
+        "address": "5 Nguyễn Tri Phương, Huế"
+      },
+      "employment": {
+        "position": "Chuyên viên truyền thông",
+        "department": "Marketing",
+        "manager_id": 7,
+        "start_date": "2023-04-12",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 15000000
+      },
+      "access": {
+        "role": "staff",
+        "permissions": ["manage_social_media", "create_post"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 19,
+      "personal_info": {
+        "full_name": "Trịnh Văn Dũng",
+        "gender": "Nam",
+        "dob": "1986-04-18",
+        "email": "dungtrinh@example.com",
+        "phone": "0988776655",
+        "address": "77 Nguyễn Văn Cừ, Hà Nội"
+      },
+      "employment": {
+        "position": "Quản lý vận hành",
+        "department": "Operations",
+        "manager_id": 6,
+        "start_date": "2018-09-01",
+        "contract_type": "Toàn thời gian",
+        "status": "Đang làm việc",
+        "salary": 32000000
+      },
+      "access": {
+        "role": "manager",
+        "permissions": ["approve_schedule", "manage_logistics"]
+      },
+      "history": {
+        "last_promotion": "2021-08-01",
+        "previous_positions": []
+      }
+    },
+    {
+      "id": 20,
+      "personal_info": {
+        "full_name": "Lương Quỳnh Chi",
+        "gender": "Nữ",
+        "dob": "1999-03-29",
+        "email": "chilq@example.com",
+        "phone": "0911227788",
+        "address": "9 Tô Hiến Thành, Đà Nẵng"
+      },
+      "employment": {
+        "position": "Thực tập sinh Marketing",
+        "department": "Marketing",
+        "manager_id": 7,
+        "start_date": "2024-07-01",
+        "contract_type": "Thực tập",
+        "status": "Đang làm việc",
+        "salary": 6000000
+      },
+      "access": {
+        "role": "intern",
+        "permissions": ["view_campaigns"]
+      },
+      "history": {
+        "last_promotion": null,
+        "previous_positions": []
+      }
+    }
+  ]
+}
