@@ -1,0 +1,11 @@
+[package]
+name = "rustapi"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = "0.4.42"
+log = "0.4.28"
+serde = "1.0.228"
+tokio = "1.48.0"
+warp = "0.4.2"
