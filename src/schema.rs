@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Employee {
     pub full_name: String,
     pub gender: String,
@@ -10,7 +10,7 @@ pub struct Employee {
     pub address: String,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct Employment {
     pub position: String,
     pub department: String,
@@ -21,26 +21,26 @@ pub struct Employment {
     pub salary: u32,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Access {
     pub role: String,
     pub permissions: Vec<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PreviousPosition {
     pub title: String,
     pub from: String,
-    pub to: String,
+    pub to: String, 
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct History {
     pub last_promotion: Option<String>,
     pub previous_positions: Vec<PreviousPosition>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct EmployeeRecord {
     pub id: u32,
     pub employee: Employee,
