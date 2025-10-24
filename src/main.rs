@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
+use warp::Filter;
 
 mod schema;
 mod handlers;
@@ -49,8 +50,12 @@ async fn main() {
     }
 
     // Gắn route
-    let api = employee_routes(db.clone());
+    let routes = employee_routes(db)
+        .recover(crate::handlers::handle_rejection);
 
-    println!("🚀 Server chạy tại http://127.0.0.1:3030");
-    warp::serve(api).run(([127, 0, 0, 1], 3030)).await;
+    warp::serve(routes).run(([127, 0, 0, 1], 3030)).await;
+
+
+    println!("Server chạy tại http://127.0.0.1:3030");
+   
 }
