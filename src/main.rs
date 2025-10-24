@@ -6,7 +6,7 @@ mod schema;
 mod handlers;
 mod routes;
 
-use schema::{EmployeeRecord, Employee, Employment, Access, History, PreviousPosition};
+use schema::{EmployeeRecord, Employee, Employment, Access, History};
 use routes::employee_routes;
 // Kiểu dữ liệu cho storage
 type Db = Arc<Mutex<HashMap<u32, EmployeeRecord>>>;
@@ -55,7 +55,7 @@ async fn main() {
 
     warp::serve(routes).run(([127, 0, 0, 1], 3030)).await;
 
-
+    
     println!("Server chạy tại http://127.0.0.1:3030");
    
 }

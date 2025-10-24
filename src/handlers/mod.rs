@@ -1,8 +1,7 @@
 use std::collections::HashMap;
 use std::sync::{Arc, Mutex};
-use warp::Reply;
-use crate::schema::{Employee, EmployeeRecord, Employment, Access, History};
-
+use crate::schema::EmployeeRecord;
+use validator::Validate;
 
 pub type Db = Arc<Mutex<HashMap<u32, EmployeeRecord>>>;
 
@@ -28,39 +27,30 @@ pub async fn get_employee_by_id(id: u32, db: Db) -> Result<impl warp::Reply, war
     }
 }
 
-pub async fn create_employee(id: u32, db: Db) -> Result<impl warp::Reply, warp::Rejection> {
+pub async fn create_employee(
+    id: u32,
+    new_employee: EmployeeRecord,
+    db: Db,
+) -> Result<Box<dyn warp::Reply>, warp::Rejection> {
     let mut store = db.lock().unwrap();
+
     if store.contains_key(&id) {
-        Err(warp::reject::custom(EmployeeExists))
-    } else {
-        let new_employee = EmployeeRecord {
-            id,
-            employee: Employee {
-                full_name: "New Employee".into(),
-                gender: "Other".into(),
-                dob: "2000-01-01".into(),
-                email: "new@example.com".into(),
-                phone: "0123456789".into(),
-                address: "Hanoi".into(),
-            },
-            // placeholders for required fields
-            employment: Employment::default(),
-            access: Access {
-                role: String::new(),            // empty string
-                permissions: Vec::new(),    
-            },
-            history: History {
-                last_promotion: None,
-                previous_positions: Vec::new(),
-            },
-        };
-        store.insert(id, new_employee);
-        Ok(warp::reply::with_status(
-            "Employee created",
-            warp::http::StatusCode::CREATED,
-        ))
+        return Err(warp::reject::custom(EmployeeExists));
     }
+
+    if let Err(e) = new_employee.validate() {
+        let json = warp::reply::json(&serde_json::json!({ "error": e.to_string() }));
+        return Ok(Box::new(warp::reply::with_status(json, StatusCode::BAD_REQUEST)));
+    }
+
+    store.insert(id, new_employee);
+
+    Ok(Box::new(warp::reply::with_status(
+        warp::reply::html("Employee created"),
+        StatusCode::CREATED,
+    )))
 }
+
 
 use warp::http::StatusCode;
 

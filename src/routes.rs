@@ -16,11 +16,12 @@ pub fn employee_routes(db: Db)
         .and(with_db(db.clone()))
         .and_then(get_employee_by_id);
 
-    // POST /employee/:id → tạo mới nhân viên với id
-    let create = warp::path!("employee" / u32)
+    let create = warp::path!("employees" / u32)
         .and(warp::post())
+        .and(warp::body::json())   // 👈 this gives you the JSON body (EmployeeRecord)
         .and(with_db(db.clone()))
         .and_then(create_employee);
+
 
     // Combine all routes
     list.or(get_by_id).or(create)
