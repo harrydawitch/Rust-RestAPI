@@ -16,6 +16,10 @@ pub fn employee_routes(db: Db)
         .and(with_db(db.clone()))
         .and_then(get_employee_by_id)
     // CREATE/ employee/:id -> tạo mới nhân viên với id
+    let create_employee = warp::path!("employee"/ u32)
+        .and(warp::post())
+        .and(with_db(db.clone()))
+        .and_then(create_employee);
     
     
 

@@ -21,5 +21,25 @@ pub async fn get_employee_by_id(id:u32,db: Db)-> Result<impl warp: Reply, warp: 
     } else {
         Err(warp::reject::not_found())
     }
-    
-}
+
+pub async fn create_employee(id:u32,db:db) -> Result<impl warp:: reply, warp::Rejection>{
+    let mut store = db.lock().unwrap();
+    if store.contains_key(&id){
+        Err(warp::reject::custom("EMployee already exists"))
+    }
+    else{
+        let new_employee = EmployeeRecord(
+            id,
+            Employee(
+                full_name: "New Employee".into(),
+                gender: "Other".into(),
+                dob: "2000-01-01".into(),
+                email: "new@example.com".into(),
+                phone: "0123456789".into(),
+                address: "Hanoi".into(),
+            )
+        )
+        store.insert(id, new_employee);
+        Ok(warp::reply::with_status("Employee created", warp::http::StatusCode::CREATED))
+    }
+}}
